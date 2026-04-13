@@ -8,8 +8,15 @@ from .qr import (
     QRResponse,
     QRStatus,
 )
+from .check_transaction import(
+    CheckTransactionRequest,
+    CheckTransactionResponse,
+    CheckTransactionData,
+    CheckTransactionStatus
+)
 
 __all__ = [
+    # QR
     "Currency",
     "PaymentOption",
     "PaymentOptions",
@@ -18,4 +25,10 @@ __all__ = [
     "QRRequest",
     "QRResponse",
     "QRStatus",
+
+    #Check transaction
+    "CheckTransactionRequest",
+    "CheckTransactionResponse",
+    "CheckTransactionData",
+    "CheckTransactionStatus",
 ]
