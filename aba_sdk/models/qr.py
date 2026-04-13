@@ -2,37 +2,15 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Optional
-from enum import Enum
 
-
-class Currency(str, Enum):
-    KHR = "KHR"
-    USD = "USD"
-
-class PaymentOption(str, Enum):
-
-    ABAPAY = "abapay"
-    KHQR = "khqr"
-    ABAPAY_KHQR = "abapay_khqr"
-    WECHAT = "wechat"
-    ALIPAY = "alipay"
-
-class PurchaseType(str, Enum):
-    PURCHASE = "purchase"
-
-
-class QRImageTemplate(str, Enum):
-    TEMPLATE1 = "template1"
-    TEMPLATE1_COLOR = "template1_color"
-    TEMPLATE2 = "template2"
-    TEMPLATE2_COLOR = "template2_color"
-    TEMPLATE4 = "template4"
-    TEMPLATE3_COLOR = "template3_color"
-
+from .base.qr_status import QRStatus
+from .base.qrImage_template import QRImageTemplate
+from .base.purchase_types import PurchaseType
+from .base.payment_options import PaymentOption
+from .base.currency import Currency
 
 
 # Request
-
 @dataclass
 class QRRequest:
 
@@ -132,26 +110,10 @@ class QRRequest:
         return tuple(values)
  
 
-# Response
-@dataclass
-class QRStatus:
-    code: str
-    message: str
-    trace_id: str
-
-    @classmethod
-    def from_dict(cls, data: dict) -> "QRStatus":
-        return cls(
-            code=data.get("code", ""),
-            message=data.get("message", ""),
-            trace_id=data.get("trace_id", "")
-        )       
-    @property
-    def is_success(self) -> bool:
-        return self.code == "0"
-    
+# Response   
 @dataclass
 class QRResponse:
+    tran_id: str
     qr_string: str
     qr_image: str
     abapay_deeplink: str
@@ -164,6 +126,7 @@ class QRResponse:
     @classmethod
     def from_dict(cls, data: dict) -> "QRResponse":
         return cls(
+            tran_id=data.get("tran_id") or data.get("tranId", ""),
             qr_string=data.get("qr_string") or data.get("qrString", ""),
             qr_image=data.get("qr_image") or data.get("qrImage", ""),
             abapay_deeplink=data.get("abapay_deeplink", ""),
@@ -174,6 +137,7 @@ class QRResponse:
             status=QRStatus.from_dict(data.get("status", {}))
         )
 
+    ## Save the QRCode image
     def save_qr_image(self, filepath: str) -> None:
         import base64
 
