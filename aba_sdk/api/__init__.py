@@ -1,4 +1,4 @@
 from .qr import QRClient
-from .check_transaction import CheckTransactionClient
+from .transaction_client import TransactionClient, CheckTransactionClient
 
-__all__ = ["QRClient", "CheckTransactionClient"]
+__all__ = ["QRClient", "TransactionClient", "CheckTransactionClient"]
