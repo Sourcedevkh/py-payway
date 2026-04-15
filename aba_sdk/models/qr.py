@@ -8,6 +8,7 @@ from .base.qrImage_template import QRImageTemplate
 from .base.purchase_types import PurchaseType
 from .base.payment_options import PaymentOption
 from .base.currency import Currency
+from ..utils.save_images import save_base64_image
 
 
 # Request
@@ -139,14 +140,7 @@ class QRResponse:
 
     ## Save the QRCode image
     def save_qr_image(self, filepath: str) -> None:
-        import base64
-
-        # Support both data URLs and raw base64 payloads.
-        _, sep, b64data = self.qr_image.partition(",")
-        payload = b64data if sep else self.qr_image
-        image_bytes = base64.b64decode(payload)
-        with open(filepath, "wb") as f:
-            f.write(image_bytes)
+        save_base64_image(self.qr_image, filepath)
 
 
 # Backward-compatible alias for common typo in examples.
