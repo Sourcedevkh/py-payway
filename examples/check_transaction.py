@@ -43,11 +43,11 @@ def main():
     print(f"   Date            : {data.transaction_date}")
 
     if data.is_approved:
-        print("\n🟢 Payment APPROVED — safe to fulfil the order")
+        print("\nPayment APPROVED — safe to fulfil the order")
     elif data.is_pending:
-        print("\n🟡 Payment PENDING — customer hasn't paid yet")
+        print("\nPayment PENDING — customer hasn't paid yet")
     else:
-        print(f"\n🔴 Payment status: {data.payment_status}")
+        print(f"\nPayment status: {data.payment_status}")
  
  
 if __name__ == "__main__":
