@@ -5,6 +5,8 @@ import urllib.error
 
 from ..config import PaywayConfig
 from ..exceptions import PaywayAPIError, PaywayRequestError
+from ..utils.hash import generate_hash
+from ..utils.timestamp import get_req_time
 
 
 class BaseClient:
@@ -83,3 +85,27 @@ class BaseClient:
             raise PaywayRequestError(
                 f"Request timed out after {self.config.timeout}s"
             ) from exc
+    
+    def _prepare_and_validate(self, endpoint: str, request, response_class, success_code: str = "00"):
+        ''''
+        Shared workflow
+        1. fill auto fields
+        2. generate hash
+        3. POST
+        4. validate status code
+        '''
+        request.req_time = get_req_time()
+        request.merchant_id = self.config.merchant_id
+
+        # generate hash from request hash_values()
+        request.hash = generate_hash(self.config.api_key, *request.hash_values())
+
+        raw = self._post(endpoint, request.to_payload())
+        status = raw.get("status", {})
+        if str(status.get("code")) != success_code:
+            raise PaywayAPIError(
+                code=status.get("code", "unknown"),
+                message=status.get("message", "Unknown error"),
+                trace_id=status.get("trace_id", "")
+            )
+        return response_class.from_dict(raw)
