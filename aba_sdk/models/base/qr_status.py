@@ -26,7 +26,7 @@ class QRStatus(BaseStatus):
         )
     @property
     def is_success(self) -> bool:
-        
+
         # ABA use "0" for success
         return self.code == "0"
 
@@ -48,3 +48,9 @@ class CheckTransactionStatus(BaseStatus):
 
         # ABA use "00" for success
         return self.code == "00"
+    
+
+# close transaction 
+# Alias from check transaction it the same
+CloseTransactionStatus = CheckTransactionStatus
+
