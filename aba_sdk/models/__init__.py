@@ -14,6 +14,11 @@ from .check_transaction import(
     CheckTransactionData,
     CheckTransactionStatus
 )
+from .close_transaction import (
+    CloseTransactionRequest,
+    CloseTransactionResponse,
+    CloseTransactionStatus,
+)
 
 __all__ = [
     # QR
@@ -31,4 +36,9 @@ __all__ = [
     "CheckTransactionResponse",
     "CheckTransactionData",
     "CheckTransactionStatus",
+
+    #Close transaction
+    "CloseTransactionRequest",
+    "CloseTransactionResponse",
+    "CloseTransactionStatus",
 ]
