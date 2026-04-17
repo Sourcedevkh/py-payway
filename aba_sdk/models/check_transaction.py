@@ -1,51 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
+from .base.qr_status import CheckTransactionStatus
+from .base.data_request import CheckTransactionRequest
 
-# Request
-@dataclass
-class CheckTransactionRequest:
-    tran_id: str
-
-    # Filled auto by the client 
-    req_time: str = ""
-    merchant_id: str = ""
-    hash: str = ""
-
-    def to_payload(self) -> dict:
-        return {
-            "req_time": self.req_time,
-            "merchant_id": self.merchant_id,
-            "tran_id": self.tran_id,
-            "hash": self.hash,
-        }
-    def hash_values(self) -> tuple:
-        return (
-            self.req_time,
-            self.merchant_id,
-            self.tran_id,
-        )
-
-# Response
-@dataclass
-class CheckTransactionStatus:
-    code: str
-    message: str
-    tran_id: str
-
-    @classmethod
-    def from_dict(cls, data: dict) -> "CheckTransactionStatus":
-        return cls(
-            code=data.get("code", ""),
-            message=data.get("message", ""),
-            tran_id=data.get("tran_id", ""),
-        )
-    @property
-    def is_success(self) -> bool:
-        return self.code == "00"
-
-
+# Responese data
 @dataclass
 class CheckTransactionData:
     payment_status_code: int
