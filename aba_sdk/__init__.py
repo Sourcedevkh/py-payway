@@ -1,6 +1,5 @@
 """
 ABA PayWay Python SDK
-=====================
 
 Quick start::
 
@@ -25,6 +24,7 @@ from .exceptions import (
     PaywayValidationError,
 )
 from .models import (
+    # QR
     Currency,
     PaymentOption,
     PaymentOptions,
@@ -33,6 +33,17 @@ from .models import (
     QRRequest,
     QRResponse,
     QRStatus,
+
+    #check transaction
+    CheckTransactionRequest,
+    CheckTransactionResponse,
+    CheckTransactionData,
+    CheckTransactionStatus,
+
+    #close transaction
+    CloseTransactionRequest,
+    CloseTransactionResponse,
+    CloseTransactionStatus,
 )
 
 # Backward-compatible aliases.
@@ -68,6 +79,17 @@ __all__ = [
     "QRRequest",
     "QRResponse",
     "QRStatus",
+
+    #check transaction
+    "CheckTransactionRequest",
+    "CheckTransactionResponse",
+    "CheckTransactionData",
+    "CheckTransactionStatus",
+
+    #close transaction
+    "CloseTransactionRequest",
+    "CloseTransactionResponse",
+    "CloseTransactionStatus",
 ]
 
 __version__ = "0.1.0"
