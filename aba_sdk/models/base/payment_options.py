@@ -12,5 +12,6 @@ class PaymentOption(str, Enum):
     ABAPAY_KHQR = "abapay_khqr"
     WECHAT = "wechat"
     ALIPAY = "alipay"
+    ALL = "abapay_khqr_wechat_alipay"
 
     ## Note: Alipay & WeChat do not support pre-auth
