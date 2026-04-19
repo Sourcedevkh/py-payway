@@ -35,12 +35,12 @@ def main():
     print("\nTransaction checked")
     print(f" tran_id: {response.status.tran_id}")
     print(f" Payment status: {data.payment_status}")
-    print(f"   Amount Paid     : {data.payment_currency} {data.payment_amount}")
-    print(f"   Original Amount : {data.original_amount}")
-    print(f"   Payment Currency: {data.payment_currency}")
-    print(f"   Refund Amount   : {data.refund_amount}")
-    print(f"   APV             : {data.apv}")
-    print(f"   Date            : {data.transaction_date}")
+    print(f" Amount Paid     : {data.payment_currency} {data.payment_amount}")
+    print(f" Original Amount : {data.original_amount}")
+    print(f" Payment Currency: {data.payment_currency}")
+    print(f" Refund Amount   : {data.refund_amount}")
+    print(f" APV             : {data.apv}")
+    print(f" Date            : {data.transaction_date}")
 
     if data.is_approved:
         print("\nPayment APPROVED — safe to fulfil the order")
