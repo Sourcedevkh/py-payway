@@ -1,4 +1,4 @@
-from .config import PaywayConfig, Environment
+from .config import PaywayConfig
 from .api.qr import QRClient
 from .api.transaction_client import TransactionClient
 
