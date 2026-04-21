@@ -11,6 +11,13 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.3] - 2026-04-21
+
+### Fixed
+- Corrected transaction client imports so installed packages resolve `CheckTransactionRequest` and `CloseTransactionRequest` from the request model module.
+
+---
+
 ## [0.1.2] - 2026-04-21
 
 ### Fixed
