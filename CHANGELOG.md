@@ -11,6 +11,13 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.4] - 2026-04-22
+
+### Fixed
+- Added `certifi` as a runtime dependency so HTTPS requests use a reliable CA bundle on macOS and other environments with incomplete system trust stores.
+
+---
+
 ## [0.1.3] - 2026-04-21
 
 ### Fixed
