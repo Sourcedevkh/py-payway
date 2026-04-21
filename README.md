@@ -8,8 +8,7 @@ A clean, dependency-free Python SDK for the [ABA PayWay](https://developer.paywa
 
 ## Image Preview
 
-<td><img src="aba_sdk/assets/image_preview.png" alt="preview" width="650"></td>
-![ABA PayWay SDK](https://raw.githubusercontent.com/khonchanphearaa/aba_sdk/assets/image_preview.png)
+![ABA PayWay SDK](https://raw.githubusercontent.com/Sourcedevkh/py-payway/main/assets/image_preview.png)
 
 ---
 
