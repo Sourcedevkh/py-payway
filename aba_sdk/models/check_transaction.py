@@ -1,6 +1,6 @@
 from __future__ import annotations
-
 from dataclasses import dataclass
+
 from .base.qr_status import CheckTransactionStatus
 from .base.data_request import CheckTransactionRequest
 
