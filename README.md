@@ -8,7 +8,8 @@ A clean, dependency-free Python SDK for the [ABA PayWay](https://developer.paywa
 
 ## Image Preview
 
-<td><img src="assets/image_preview.png" alt="preview" width="650"></td>
+<td><img src="aba_sdk/assets/image_preview.png" alt="preview" width="650"></td>
+![ABA PayWay SDK](https://raw.githubusercontent.com/khonchanphearaa/aba_sdk/assets/image_preview.png)
 
 ---
 
@@ -17,9 +18,7 @@ A clean, dependency-free Python SDK for the [ABA PayWay](https://developer.paywa
 ### 1. Install
 
 ```bash
-# No pip install needed — just copy the aba_sdk/ folder into your project.
-# Or install from this repo:
-pip install -e .
+pip install aba-payway
 ```
 
 ### 2. Configure
