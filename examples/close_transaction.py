@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import sys
 
@@ -13,8 +14,8 @@ from aba_sdk import(
 
 def main():
     config = PaywayConfig(
-        merchant_id="your_merchant_id",
-        api_key="your_api_key",
+        merchant_id=os.getenv("MERCHANT_ID"),
+        api_key=os.getenv("API_KEY"),
         env=Environment.sandbox
     )
     client = PayWayClient(config)
