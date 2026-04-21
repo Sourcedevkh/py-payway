@@ -1,6 +1,7 @@
 from .base import BaseClient
-from ..models.check_transaction import CheckTransactionRequest, CheckTransactionResponse
-from ..models.close_transaction import CloseTransactionRequest, CloseTransactionResponse
+from ..models.base.data_request import CheckTransactionRequest, CloseTransactionRequest
+from ..models.check_transaction import CheckTransactionResponse
+from ..models.close_transaction import CloseTransactionResponse
 
 class TransactionClient(BaseClient):
 
