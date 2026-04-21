@@ -20,6 +20,12 @@ A clean, dependency-free Python SDK for the [ABA PayWay](https://developer.paywa
 pip install aba-payway
 ```
 
+OR Update Last Version
+
+```bash
+pip install --upgrade aba-payway
+```
+
 ### 2. Configure
 
 ```python
