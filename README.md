@@ -6,6 +6,12 @@ A clean, dependency-free Python SDK for the [ABA PayWay](https://developer.paywa
 
 ---
 
+## Image Preview
+
+<td><img src="assets/image_preview.png" alt="preview" width="650"></td>
+
+---
+
 ## Quick Start
 
 ### 1. Install
