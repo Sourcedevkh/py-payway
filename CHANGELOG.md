@@ -11,6 +11,14 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.1.2] - 2026-04-21
+
+### Fixed
+- Removed unused imports that broke Ruff checks in GitHub Actions.
+- Fixed package exports so `CheckTransactionRequest` and `CloseTransactionRequest` resolve correctly after install.
+
+---
+
 ## [0.1.0] - 2025-04-19
 
 ### Added
