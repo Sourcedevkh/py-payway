@@ -2,7 +2,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .base.qr_status import CloseTransactionStatus
-from .base.data_request import CloseTransactionRequest
 
 # Response
 @dataclass
