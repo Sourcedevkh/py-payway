@@ -1,7 +1,7 @@
 from .base import BaseClient
 from ..models.check_transaction import CheckTransactionRequest, CheckTransactionResponse
 from ..models.close_transaction import CloseTransactionRequest, CloseTransactionResponse
-from ..models.qr import QRRequest, QRResponse
+
 class TransactionClient(BaseClient):
 
     _ENDPOINT_CHECK = "api/payment-gateway/v1/payments/check-transaction-2"
