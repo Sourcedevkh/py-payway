@@ -8,14 +8,16 @@ from .qr import (
     QRResponse,
     QRStatus,
 )
-from .check_transaction import(
+from .base.data_request import (
     CheckTransactionRequest,
+    CloseTransactionRequest,
+)
+from .check_transaction import(
     CheckTransactionResponse,
     CheckTransactionData,
     CheckTransactionStatus
 )
 from .close_transaction import (
-    CloseTransactionRequest,
     CloseTransactionResponse,
     CloseTransactionStatus,
 )
