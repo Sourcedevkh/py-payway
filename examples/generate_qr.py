@@ -16,30 +16,32 @@ from aba_sdk.utils.timestamp import get_req_time
 
 def main():
     config = PaywayConfig(
-        merchant_id="eroxisabaypay",
-        api_key="22e9e0cf-d5b4-4a31-82db-bc1046b20dac",
+        merchant_id="your_merchant_id",
+        api_key="your_api_key",
         env=Environment.sandbox,
     )
     client = PaywayClient(config)
     print(f"client:{client}")
 
-    itmes = encode_items([
-        {"name": "Coffee", "quantity": 1, "price": 3.5},
-        {"name": "Bagel", "quantity": 2, "price": 2.0},
-    ])
+    #  Is can be optional, 
+    # itmes = encode_items([
+    #     {"name": "Coffee", "quantity": 1, "price": 3.5},
+    #     {"name": "Bagel", "quantity": 2, "price": 2.0},
+    # ])
 
     tran_id = f"ORDER-{get_req_time()}"
 
     request = QRRequest(
         tran_id=tran_id,
-        amount=1000,
+        amount=1500,
         currency=Currency.KHR,
         payment_option=PaymentOption.ABAPAY_KHQR,
         first_name="Dara",
         last_name="Keng",
         email="dara@example.com",
         phone="012345678",
-        items=itmes,
+
+        # items=itmes,
         # callback_url=encode_url("https://api.yoursite.com/payway/callback"),
         lifetime=6,
         qr_image_template=QRImageTemplate.TEMPLATE3_COLOR,
