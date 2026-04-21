@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import sys
 
@@ -16,8 +17,8 @@ from aba_sdk.utils.timestamp import get_req_time
 
 def main():
     config = PaywayConfig(
-        merchant_id="your_merchant_id",
-        api_key="your_api_key",
+        merchant_id=os.getenv("MERCHANT_ID"),
+        api_key=os.getenv("API_KEY"),
         env=Environment.sandbox,
     )
     client = PaywayClient(config)
