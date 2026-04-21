@@ -13,8 +13,8 @@ from aba_sdk import (
 
 def main():
     config = PaywayConfig(
-        merchant_id="eroxisabaypay",
-        api_key="22e9e0cf-d5b4-4a31-82db-bc1046b20dac",
+        merchant_id="your_merchant_id",
+        api_key="your_api_key",
         env=Environment.sandbox
     )
 
