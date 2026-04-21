@@ -12,7 +12,6 @@ from aba_sdk import(
     PaywayRequestError,
 )
 from aba_sdk.models import QRRequest, Currency, PaymentOption, QRImageTemplate
-from aba_sdk.utils import encode_items, encode_url
 from aba_sdk.utils.timestamp import get_req_time
 
 def main():
